@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>About</title>
+{% endblock %}
+
+{% block body %}
+<hr>
+
+<a href="{{ url_for('index') }}">
+    << back </a>
+
+
+        <div class="team text-center">
+            <h2>MEET THE</h2>
+            <h1>TEAM</h1>
+            <hr>
+            <hr>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{{ url_for('static', filename='images/fabrice.jpg') }}" alt="photo of fabrice_ngoran" class="img-circle" width="287" height="287">
+                    <h3>Fabrice Ngoran</h3>
+                    <p>fabricengoran9@gmail.com</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{{ url_for('static', filename='images/florence.jpg') }}" alt="photo of fabrice_ngoran" class="img-circle" width="287" height="287">
+                    <h3>Nduma Florence</h3>
+                    <p>ndumaflorence7@gmail.com</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{{ url_for('static', filename='images/karine.jpg') }}" alt="photo of fabrice_ngoran" class="img-circle" width="287" height="287">
+                    <h3>Lekeufack Karine</h3>
+                    <p>karinelekeufack8@gmail.com</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{{ url_for('static', filename='images/wara.jpg') }}" alt="photo of fabrice_ngoran" class="img-circle" width="287" height="287">
+                    <h3>Abongwe Wara</h3>
+                    <p>wabongwe@gmail.com</p>
+                </div>
+            </div>
+
+            <hr>
+            <hr>
+
+            <p class="about-text">This project was an assignment / continuous assestment for our first semester 2020 / 2021 school year. The title of the course is "<strong>FUNDAMENTALS OF DATA SCIENCE".</strong> Tutored by <strong>Dr. Tchagna Aurelle</strong> of the University of Buea.</p>
+
+            <hr>
+            <hr>
+
+            <p>copyright &copy; 2021 College of Technology, Buea | <a href="{{ url_for('index') }}">home</a></p>
+        </div>
+
+
+        {% endblock %}

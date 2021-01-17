@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<h1 class="text-center">FUNDAMENTALS OF DATA SCIENCE GROUP II</h1>
+
+<p style="color: red;">{{ message }}</p>
+
+<div class="row">
+    <div class="col-md-4" id="datasets">
+        <h3>Select a dataset below</h3>
+        <ul class="list-group list-inline">
+            <li class="">
+                <form action="/analyze" method="post" id="datasetsForm">
+                    <select name="dataset" id="">
+                        <option value="">choose a dataset</option>
+                        <option value="auto.csv">auto.csv</option>
+                        <option value="automobileEDA.csv">automobileEDA.csv</option>
+                    </select>
+                    <input type="submit" value="Analyze" id="analyze-button">
+                </form>
+            </li>
+            <li class="">
+                <form action="/reset" method="get" id="reset">
+                    <input type="submit" value="Reset">
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-4" id="upload">
+        <h3>Choose a file below to import</h3>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <ul class="list-inline">
+                <li>
+                    <input type="submit" value="Upload" id="upload-button" />
+                </li>
+                <li>
+                    <input type="file" name="file" />
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    <div class="col-md-4" id="commands">
+        <h3>Useful commands</h3>
+        <ul class="list-group list-inline">
+            <li class="">
+                <form action="/tail" method="post">
+                    <!-- <input type="text" name="tail" id="tail"> -->
+                    <input type="submit" value="Tail">
+                </form>
+            </li>
+            <li class="">
+                <form action="/describe" method="post">
+                    <!-- <input type="text" name=describe"" id="describe"> -->
+                    <input type="submit" value="Describe">
+                </form>
+            </li>
+            <li class="">
+                <form action="/head" method="post">
+                    <!-- <input type="text" name="head" id="head"> -->
+                    <input type="submit" value="Head">
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+<h1>{{ name }}</h1>
+{% if success == False %}
+<p class="text-center" style="color: red;">{{ data }}</p>
+{% elif success %}
+<p class="text-center" style="color: green;">{{ data }}</p>
+{% else %}
+<div class="container text-center">{{ data | safe }}</div>
+{% endif %}
+
+<br>
+<hr>
+{{ head | safe }}
+<!-- <button>show</button>
+<br>
+<hr> -->
+{{ tail | safe }}
+<!-- <button>show</button>
+<br>
+<hr> -->
+{{ drop_na | safe }}
+<!-- <button>show</button>
+<br>
+<hr> -->
+{{ describe_column | safe }}
+<!-- <button>show</button>
+<br>
+<hr> -->
+{{ describe | safe }}
+<!-- <button>show</button>
+<br>
+<hr> -->
+
+<hr>
+<hr>
+<div class="row">
+    <div class="col-md-4" id="export-form">
+        <ul class="list-inline">
+            <h4>Select extension to export file</h4>
+            <li>
+                <form action="/export" method="post" id="export">
+                    <select name="format">
+                        <option value="csv">csv</option>
+                        <option value="json">json</option>
+                        <option value="excel">excel</option>
+                        <option value="hdf">hdf</option>
+                    </select>
+                    <button>export</button>
+                </form>
+            </li>
+            <li>
+                <form action="/download" method="post" id="download-form">
+                    <button>download</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <hr>
+
+    <div class="col-md-4" id="custom-commands">
+        <form action="{{ url_for('command') }}" method="post" id="custom-form">
+            <h4>Try your own commands below</h4>
+            <button id="run-button" disabled="disabled">Run</button>
+            <textarea name="custom-command" id="custom-command" placeholder="Type in your command..." cols="30"
+                rows="1" disabled="disabled"></textarea>
+            <!-- <input type="text" name="custom-command" id="custom-command" placeholder="Type in your command..."> -->
+        </form>
+    </div>
+    <hr>
+
+    <div class="col-md-4" id="credits">
+        <p>copyright &copy; 2021 College of Technology, Buea | <a href="{{ url_for('about') }}">about</a></p>
+    </div>
+</div>
+
+<br>
+<hr>
+{% endblock %}

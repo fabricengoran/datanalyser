@@ -1,0 +1,91 @@
+body {
+    /* margin: 0;
+    padding: auto; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #eeaa !important;
+}
+
+.row .col-md-4#datasets input,
+.row .col-md-4#commands input {
+    background: rgba(10, 80, 31, 0.667);
+    color: #fff;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.row .col-md-4#commands input {
+    background: blue;
+}
+
+.row .col-md-4 ul li #reset input {
+    background: red;
+}
+
+.row .col-md-4#upload input#upload-button {
+    background: yellow;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.row .col-md-4#commands {
+    direction: rtl;
+}
+
+.row .col-md-6#custom-commands {
+    /* direction: rtl; */
+}
+
+.row .col-md-4#commands h3 {
+    padding-right: 4rem;
+}
+
+button {
+    background: #444;
+    color: #fff;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.row .col-md-4 input,
+.row .col-md-6 input,
+button {
+    outline-style: none;
+}
+
+.row .col-md-4 input:active,
+.row .col-md-6 input:active,
+button:active {
+    transform: translateY(2px);
+    -webkit-transform: translateY(2px);
+    -moz-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    -o-transform: translateY(2px);
+}
+
+.team h1 {
+    letter-spacing: 100px;
+    font-weight: 900;
+}
+.team h2 {
+    letter-spacing: 60px;
+}
+
+.team .col-md-3 h3 {
+    font: bold 24px/30px sans-serif;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.about-text {
+    border: solid 1px #444;
+    padding: 50px;
+}
